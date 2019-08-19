@@ -1,0 +1,74 @@
+.middle-container {
+  margin-top: 20px;
+
+  .custom-nz-card {
+    background: rgba(255, 255, 255, 0.9);
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  form {
+    .custom-nz-form-label{
+      text-align: left;
+    }
+
+    textarea{
+      resize: none;
+      outline: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+
+  .editor-btn-container {
+    margin: auto;
+    width: fit-content;
+
+    .editor-btn {
+      margin-right: 20px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.custom-uploader-container{
+  border: 1px dashed #d9d9d9;
+  width: 104px;
+  height: 104px;
+  border-radius: 4px;
+  background-color: #fafafa;
+  text-align: center;
+  transition: border-color .3s ease;
+  vertical-align: top;
+  display: table;
+  cursor: pointer;
+
+  div{
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px;
+
+    i{
+      font-size: 32px;
+      color: #999;
+    }
+
+    span{
+      margin-top: 8px;
+      color: #666;
+      display: block;
+    }
+  }
+
+  &:hover{
+    border-color: #1890ff;
+  }
+}

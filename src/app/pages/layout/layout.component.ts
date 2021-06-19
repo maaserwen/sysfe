@@ -20,9 +20,6 @@ export class LayoutComponent implements OnInit {
       path: 'choose',
       label: '选课'
     }, {
-      path: 'judge',
-      label: '教学评价'
-    }, {
       path: 'query-class',
       label: '课表查询'
     }],

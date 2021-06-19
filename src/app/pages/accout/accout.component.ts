@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { NzMessageService } from 'ng-zorro-antd';
 import { SignUpModel } from 'src/app/interfaces/global';
-import { saveUserInfo } from 'src/app/reducers/actions';
-import { StoreStates } from 'src/app/reducers/storeState';
 import { UserInfoRes } from 'src/app/service/request-interface';
 import { RequestService } from 'src/app/service/request.service';
 
@@ -30,7 +27,7 @@ export class AccoutComponent implements OnInit {
     private message: NzMessageService,
     private route: Router,
     private req: RequestService,
-    private store: Store<StoreStates>) { }
+  ) { }
 
   handleOk() {
     if (!this.signUpForm.valid) {
@@ -49,11 +46,8 @@ export class AccoutComponent implements OnInit {
         this.message.error(res.message);
       } else {
         this.message.success(res.message);
-        this.store.dispatch(saveUserInfo(res.data.user));
-        localStorage.setItem('token', res.data.token);
       }
       this.loading = false;
-      this.route.navigate(['/main']);
     });
   }
 

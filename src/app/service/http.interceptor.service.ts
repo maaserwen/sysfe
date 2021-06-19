@@ -4,9 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { NzMessageService } from 'ng-zorro-antd';
 import { environment } from 'src/environments/environment';
-import { StoreStates } from '../reducers/storeState';
+// import { StoreStates } from '../reducers/storeState';
 import { Store } from '@ngrx/store';
-import { clearUserInfo } from '../reducers/actions';
+// import { clearUserInfo } from '../reducers/actions';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,7 @@ export class HttpInterceptorService implements HttpInterceptor {
 
   constructor(
     private message: NzMessageService,
-    private store: Store<StoreStates>
+    // private store: Store<StoreStates>
   ) { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -56,7 +56,7 @@ export class HttpInterceptorService implements HttpInterceptor {
               }
               case '-6': {
                 localStorage.removeItem('token');
-                this.store.dispatch(clearUserInfo());
+                // this.store.dispatch(clearUserInfo());
               }
             }
           }

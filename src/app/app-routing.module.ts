@@ -4,20 +4,28 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'user',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'user',
-    loadChildren: './pages/user/user.module#UserModule'
+    path: 'login',
+    loadChildren: './pages/login/login.module#LoginModule'
   },
   {
-    path: 'manager',
-    loadChildren: './pages/manager/manager.module#ManagerModule'
+    path: 'sign-up',
+    loadChildren: './pages/accout/accout.module#AccoutModule'
+  },
+  {
+    path: 'main',
+    loadChildren: './pages/layout/layout.module#LayoutModule'
+  },
+  {
+    path: 'account',
+    loadChildren: './pages/accout/accout.module#AccoutModule'
   },
   {
     path: '**',
-    redirectTo: 'user',
+    redirectTo: 'login',
     pathMatch: 'full'
   }
 ];

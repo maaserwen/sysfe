@@ -1,3 +1,0 @@
-<nz-link *ngFor="let anchor of anchorList" [nzHref]="anchor.href" [nzTitle]="anchor.title">
-  <app-dynamic-anchor v-if="anchor.children && anchor.children.length" [anchorList]="anchor.children"></app-dynamic-anchor>
-</nz-link>

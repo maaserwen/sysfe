@@ -1,0 +1,18 @@
+<nz-card nzTitle="我的课程">
+  <nz-table #basicTable [nzData]="classes">
+    <thead>
+      <tr>
+        <th>课程名称</th>
+        <th>任课老师</th>
+        <th>分数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.classname }}</td>
+        <td>{{ data.owner }}</td>
+        <td>{{ data.score }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

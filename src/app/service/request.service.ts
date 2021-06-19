@@ -13,21 +13,47 @@ export class RequestService {
     private http: HttpClient
   ) { }
 
-  saveBlog(data): Observable<object> {
-    return this.http.post('/blog/saveBlog', data);
-  }
-
-  uploadFile(data): Observable<object> {
-    const formdata = new FormData();
-    formdata.append('file', data);
-    return this.http.post('/file/upload', data);
-  }
-
   signUp(data: SignUpModel): Observable<object | UserInfoRes> {
     return this.http.post('/users/signUp', data);
   }
 
   signIn(data: SignInModel): Observable<object | UserInfoRes> {
     return this.http.post('/users/signIn', data);
+  }
+
+  queryScore(id): Observable<any> {
+    return this.http.get(`/class/queryScore?id=${id}`);
+  }
+
+  queryTeacher(): Observable<any> {
+    return this.http.get('/teacher/teachers');
+  }
+
+  addClass(data: any): Observable<any> {
+    return this.http.post('/class/add', data);
+  }
+
+  queryClass(): Observable<any> {
+    return this.http.get('/class/query');
+  }
+
+  queryClassByUser(id): Observable<any> {
+    return this.http.get(`/class/queryByUser?id=${id}`);
+  }
+
+  deleteClass(id: string): Observable<any> {
+    return this.http.get(`/class/delete?id=${id}`);
+  }
+
+  chooseClass(data: any): Observable<any> {
+    return this.http.post(`/class/choose`, data);
+  }
+
+  queryClassByOwner(id): Observable<any> {
+    return this.http.get(`/class/queryByOwner?id=${id}`);
+  }
+
+  uploadScore(data): Observable<any>  {
+    return this.http.post('/class/uploadScore', data);
   }
 }

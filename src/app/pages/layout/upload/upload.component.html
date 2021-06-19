@@ -1,0 +1,22 @@
+<nz-card *ngFor="let class of classes" [nzTitle]="class.classname">
+  <nz-table #basicTable [nzData]="class.students">
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>分数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.username }}</td>
+        <td>
+          <div class="editable-cell" [hidden]="editId === data.id" (click)="startEdit(data.id)">
+            {{ data.score || 0 }}
+          </div>
+          <nz-input-number [nzMin]="0" [nzMax]="100" [nzStep]="1" [hidden]="editId !== data.id" type="text" [(ngModel)]="data.score" (nzBlur)="stopEdit()" ></nz-input-number>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+  <button nz-button nzType="primary" (click)="uploadData(class)" style="margin: auto;display: block;">提交</button>
+</nz-card>

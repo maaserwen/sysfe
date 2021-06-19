@@ -9,9 +9,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
-import { ComponentsModule } from './components/components.module';
-import { LayoutModule } from './layout/layout.module';
-import { EqualValidator } from './directives/validate-equal.directive';
 import { HttpInterceptorService } from './service/http.interceptor.service';
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
@@ -21,7 +18,6 @@ registerLocaleData(zh);
 @NgModule({
   declarations: [
     AppComponent,
-    EqualValidator
   ],
   imports: [
     BrowserModule,
@@ -30,8 +26,6 @@ registerLocaleData(zh);
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ComponentsModule,
-    LayoutModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

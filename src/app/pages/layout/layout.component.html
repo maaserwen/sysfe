@@ -1,0 +1,20 @@
+<nz-layout>
+  <nz-header>
+    <div>  
+      <img src="../assets/logo.png">学生管理系统
+    </div>
+    <button nz-button nzType="link" style="float: right;color: #fff" (click)="logout()">退出登录</button>
+  </nz-header>
+  <nz-layout>
+    <nz-sider>
+      <ul *ngIf="role" nz-menu nzMode="inline" nzTheme="light">
+        <li *ngFor="let menu of MENUDATA[role]" nz-menu-item nz-tooltip nzTooltipPlacement="right" [nzSelected]="menu.path === selectedMenu">
+          <a [routerLink]="'/main/' + menu.path">{{menu.label}}</a>
+        </li>
+      </ul>
+    </nz-sider>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+  </nz-layout>
+</nz-layout>

@@ -1,15 +1,13 @@
 export interface UserInfoState {
   username: string;
   id: string;
-  photo?: string;
-  isAdmin: boolean;
+  role: string;
 }
 
 export const InitUserInfo: UserInfoState = {
   username: null,
   id: null,
-  photo: null,
-  isAdmin: null
+  role: null
 };
 
 export type StoreStates = UserInfoState;

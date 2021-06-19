@@ -1,0 +1,20 @@
+<nz-card nzTitle="选课">
+  <nz-table #basicTable [nzData]="classes">
+    <thead>
+      <tr>
+        <th>课程名称</th>
+        <th>任课老师</th>
+        <th>学生人数</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.classname }}</td>
+        <td>{{ data.owner }}</td>
+        <td>{{ data.students.length }} / {{ data.limit || 100 }}</td>
+        <td><button [disabled]="data.students.length > data.limit || data.students.includes(userId)" nz-button nzType="link" (click)="handleSelect(data)">选课</button></td>
+      </tr>
+    </tbody>
+  </nz-table>
+</nz-card>

@@ -1,0 +1,51 @@
+<div class="login">
+  <div class="login-container">
+    <img src="../../../assets/logo.png" alt="logo" />
+    <form nz-form [formGroup]="signInForm" class="signInForm">
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="username"
+          >用户名</nz-form-label
+        >
+        <nz-form-control
+          [nzSpan]="14"
+          nzErrorTip="请输入3-10位用户名"
+          nzValidateStatus="validating"
+        >
+          <input nz-input formControlName="username" id="username" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="password"
+          >密码</nz-form-label
+        >
+        <nz-form-control
+          [nzSpan]="14"
+          nzErrorTip="请输入8-16位密码(至少包含1个字母，1个数字)"
+          nzValidateStatus="validating"
+        >
+          <input
+            nz-input
+            formControlName="password"
+            type="password"
+            id="password"
+          />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzRequired nzFor="password"
+          >角色</nz-form-label
+        >
+        <nz-form-control [nzSpan]="14" nzValidateStatus="validating">
+          <nz-select formControlName="role">
+            <nz-option nzValue="1" nzLabel="学生"></nz-option>
+            <nz-option nzValue="2" nzLabel="教师"></nz-option>
+            <nz-option nzValue="3" nzLabel="管理员"></nz-option>
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <button class="login-btn" (click)="handleOk()" nz-button nzType="primary">
+      登&nbsp;录
+    </button>
+  </div>
+</div>
